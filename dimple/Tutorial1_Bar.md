@@ -49,7 +49,11 @@ require(rCharts)
 ```
 
 ```r
-lapply(barexamples, FUN = create_chart)
+lapply(barexamples, FUN = function(x) {
+    # cat(noquote(paste0( '<h3>', yaml.load(gsub(readLines(x,n=1),pattern='##
+    # ', replacement=''))$title, '</h3>')))
+    create_chart(x)
+})
 ```
 
 [[1]]

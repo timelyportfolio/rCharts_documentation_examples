@@ -72,7 +72,11 @@ barexamples &lt;- sort(barexamples)
 <pre><code>## Loading required package: rCharts
 </code></pre>
 
-<pre><code class="r">lapply(barexamples, FUN = create_chart)
+<pre><code class="r">lapply(barexamples, FUN = function(x) {
+    # cat(noquote(paste0( &#39;&lt;h3&gt;&#39;, yaml.load(gsub(readLines(x,n=1),pattern=&#39;##
+    # &#39;, replacement=&#39;&#39;))$title, &#39;&lt;/h3&gt;&#39;)))
+    create_chart(x)
+})
 </code></pre>
 
 <p>[[1]]</p>
